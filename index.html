@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>我亲爱的姐姐生日快乐（有点恶心）</title>
+	</head>
+	<body>
+		
+		<input type="button" value="先点这个" onclick="start();"/>
+		<div id="timeDiv"></div>
+		<br><br><br>
+		<h3>下面进行测试，请选手作答</h3>
+		<br>
+		第一题 判断题 点击按钮进入测试(填写1或0-->1代表是，0代表不是)<br>
+		<input type="button"id="btn1" value="按钮"/>
+		<br><br><br>
+		第二题<br><select id="se">
+			<option value="">--选择你认为对的事情的事情--</option>
+			<option value="不错，不错，还有良心">时时刻刻礼让弟弟 给他买吃的</option>
+			<option value="很好 很好">不要每次说不过我的时候就耍赖 嘴硬</option>
+			<option value="孺子可教">对我要和气对待，不要很粗鲁</option>
+			<option value="就知道你会点">你最漂亮</option>
+		</select>
+		<br><br><br>
+        第三题 点击按钮(一定要点) 十秒钟之内鼠标按住左键拖动文字移动 覆盖掉下面的?
+        <input type="button"id="btn3"value="按钮"/>
+        <div id="box1" style="width:20px;height:60px;position:absolute; "><h3>生</h3></div><br><br><br><br>
+        
+        <span id="box2" hidden="hidden" style="width:20px;height:60px; position:absolute;right:850px "><h3>日</h3></span> 
+
+        <span id="box3" hidden="hidden" style="width:20px;height:60px; position:absolute;right:810px "><h3>快</h3></span>
+         
+        <span id="box4" hidden="hidden" style="width:20px;height:60px; position:absolute;right:770px "><h3>乐</h3></span><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		 <span>?</span>
+        
+
+ 
+		<br><br>
+		<br><hr>
+		<a href="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg14.360buyimg.com%2Fn1%2Fjfs%2Ft1%2F196047%2F15%2F14841%2F434184%2F60fcd33fE139364b9%2Faa7b2548c79b6690.jpg&refer=http%3A%2F%2Fimg14.360buyimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1669288496&t=99e7d1d75a2355bf2e17aec8747412c5">点击这个你就会发现你是个</a>
+	
+		<br><br><hr>
+		<input type="button" value="最后点击这个按钮" id="btn"/>
+		<div id="div1"/>
+		<br>
+		 
+	</body>
+
+
+	<script type="text/javascript">
+			
+				document.getElementById("btn").onclick=function(){
+					document.getElementById("div1").innerHTML="<h3>咳咳咳，第一次尝试用这种方式，可能有一些问题，但你不要看起来简单，我这可是搞了很久的，我至少都是运行了上百次，前几天做到一半还不小心删掉了一半，我都差点甩键盘不做了。不管你看没看到 但不管如此，如果你看到了，还是证明我是很厉害的。</h3>";
+				}
+
+				document.getElementById("se").onchange=function(){
+					alert(se.value);
+				}
+
+				function displayTime(){
+					var date=new Date();
+					var today=date.getTime();
+					var before=(new Date("1999/11/10")).getTime();
+					var my_time=today-before;
+					var days    = my_time / 1000 / 60 / 60 / 24;
+					var daysRound = Math.floor(days);
+					var hours = my_time / 1000 / 60 / 60 - (24 * daysRound);
+					var hoursRound = Math.floor(hours);
+					var minutes = my_time / 1000 / 60 - (24 * 60 * daysRound) - (60 * hoursRound);
+					var minutesRound = Math.floor(minutes);
+					var seconds = my_time / 1000 - (24 * 60 * 60 * daysRound) - (60 * 60 * hoursRound) - (60 * minutesRound);
+					seconds=Math.floor(seconds);
+					 document.getElementById("timeDiv").innerHTML=("从你出生到现在已经过去了"+daysRound + '天'+hoursRound + '时'+minutesRound + '分'+seconds + '秒'+",没想到你已经这么老了，从小我都是看着你长大的，小时候常常让我和爸爸妈妈不省心，希望你以后可以懂事一些，经常记得买好吃的给我和爸爸妈妈");
+				}
+
+				 function start(){
+				 	window.setInterval("displayTime()",1000);
+				 }
+				 document.getElementById("btn1").onclick=function(){
+				 	var q1=window.prompt("你小时候是不是经常欺负我，抢我遥控，抢我吃的");
+				 	while(q1==0||q1==null){
+				 	var q1=window.prompt("你小时候是不是经常欺负我，抢我遥控，抢我吃的");
+				 	}
+				 	var q2=window.prompt("你是不是打不赢我就叫佳美不跟我玩，还跟我断节");
+				 	while(q2==0||q2==null){
+				 	var q2=window.prompt("你是不是打不赢我就叫佳美不跟我玩，还跟我断节");
+				 	}
+				 	var q3=window.prompt("你小时候是不是经常向妈妈告状，煽风点火");
+				 	while(q3==0||q3==null){
+				 	var q3=window.prompt("你小时候是不是经常向妈妈告状，煽风点火");
+				 	}
+				 	var q4=window.prompt("你是不是知道错了，后悔了");
+				 	while(q4==0||q4==null){
+				 	var q4=window.prompt("你是不是知道错了，后悔了");
+				 	}
+				 	alert("第一题全部答对，我很欣慰，我可没有强迫你选哦");
+				 }
+
+				  
+		
+			   document.getElementById("box1").onmousedown=function(event){
+				  event=event||window.event;
+				  box1.setCapture&&box1.setCapture();
+				  var ol=event.clientX-box1.offsetLeft;
+				  var ot=event.clientY-box1.offsetTop;
+
+				  document.onmousemove=function(event){
+					event=event||window.event;
+					var left=event.clientX-ol;
+					var top=event.clientY-ot;
+
+					box1.style.left=left+"px";
+					box1.style.top=top+"px";
+			};
+				document.onmouseup=function(){
+					document.onmousemove=null;
+					document.onmouseup=null;
+					box1.releaseCapture&&box1.releaseCapture();
+			};
+
+			return false;
+		}
+
+		document.getElementById("btn3").onclick=function(){
+			var timer=setTimeout(function(){
+				document.getElementById("box2").hidden="";
+				document.getElementById("box3").hidden="";
+				document.getElementById("box4").hidden="";
+
+			},8000);
+		}
+	
+
+			
+		</script>
+</html>
